@@ -27,3 +27,5 @@ if(MSVC)
 else()
     install(TARGETS hdmi_cec_analyzer LIBRARY DESTINATION ".")
 endif()
+
+set_post_build_destination(hdmi_cec_analyzer)
