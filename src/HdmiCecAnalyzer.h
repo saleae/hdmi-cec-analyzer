@@ -7,7 +7,7 @@
 
 class HdmiCecAnalyzerSettings;
 
-class ANALYZER_EXPORT HdmiCecAnalyzer : public Analyzer2
+class HdmiCecAnalyzer : public Analyzer2
 {
 public:
     HdmiCecAnalyzer();
