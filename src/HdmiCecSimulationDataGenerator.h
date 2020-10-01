@@ -8,14 +8,14 @@ class HdmiCecAnalyzerSettings;
 
 class HdmiCecSimulationDataGenerator
 {
-public:
+  public:
     HdmiCecSimulationDataGenerator();
     ~HdmiCecSimulationDataGenerator();
 
     void Initialize( U32 simulation_sample_rate, HdmiCecAnalyzerSettings* settings );
     U32 GenerateSimulationData( U64 newest_sample_requested, U32 sample_rate, SimulationChannelDescriptor** simulation_channel );
 
-protected:
+  protected:
     HdmiCecAnalyzerSettings* mSettings;
     U32 mSimulationSampleRateHz;
 
@@ -45,7 +45,7 @@ protected:
 
 
     void GenStartSeq();
-    void GenHeaderBlock( U8 src, U8 dst, bool eom = false, bool ack= true );
+    void GenHeaderBlock( U8 src, U8 dst, bool eom = false, bool ack = true );
     void GenDataBlock( U8 data, bool eom, bool ack );
     // Generates a transition representing a single bit, if ackBit is true
     // the the timings are inverted as indicated by the spec
@@ -59,4 +59,4 @@ protected:
     // Returns a random float form 0 to 1 using rand()
     float frand();
 };
-#endif //HDMICEC_SIMULATION_DATA_GENERATOR
+#endif // HDMICEC_SIMULATION_DATA_GENERATOR

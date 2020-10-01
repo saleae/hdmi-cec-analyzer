@@ -9,7 +9,7 @@ class HdmiCecAnalyzerSettings;
 
 class HdmiCecAnalyzerResults : public AnalyzerResults
 {
-public:
+  public:
     HdmiCecAnalyzerResults( HdmiCecAnalyzer* analyzer, HdmiCecAnalyzerSettings* settings );
     virtual ~HdmiCecAnalyzerResults();
 
@@ -20,8 +20,7 @@ public:
     virtual void GeneratePacketTabularText( U64 packet_id, DisplayBase display_base );
     virtual void GenerateTransactionTabularText( U64 transaction_id, DisplayBase display_base );
 
-protected: //functions
-
+  protected: // functions
     // Generate bubbles for different frame types.
     void GenBubbleText( U64 frame_index, DisplayBase display_base, bool tabular );
     void GenStartSeqBubble();
@@ -36,7 +35,7 @@ protected: //functions
     // std::string wrapper for AnalyzerHelpers::GetNumberString using mDisplayBase
     std::string GetNumberString( U64 number, int bits );
 
-protected:  //vars
+  protected: // vars
     HdmiCecAnalyzerSettings* mSettings;
     HdmiCecAnalyzer* mAnalyzer;
 
@@ -44,4 +43,4 @@ protected:  //vars
     bool mTabular;
 };
 
-#endif //HDMICEC_ANALYZER_RESULTS
+#endif // HDMICEC_ANALYZER_RESULTS

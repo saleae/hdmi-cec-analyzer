@@ -3,8 +3,7 @@
 
 #include "HdmiCecProtocol.h"
 
-HdmiCecAnalyzerSettings::HdmiCecAnalyzerSettings()
-:	mCecChannel( UNDEFINED_CHANNEL )
+HdmiCecAnalyzerSettings::HdmiCecAnalyzerSettings() : mCecChannel( UNDEFINED_CHANNEL )
 {
     mCecChannelInterface.reset( new AnalyzerSettingInterfaceChannel() );
     mCecChannelInterface->SetTitleAndTooltip( HdmiCec::GetChannelName(), HdmiCec::GetFullProtocolName() );

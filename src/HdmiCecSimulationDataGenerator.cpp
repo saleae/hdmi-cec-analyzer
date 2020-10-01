@@ -38,10 +38,10 @@ void HdmiCecSimulationDataGenerator::Initialize( U32 simulation_sample_rate, Hdm
     AdvanceRand( 0.5f, 2.0f );
 }
 
-U32 HdmiCecSimulationDataGenerator::GenerateSimulationData( U64 largest_sample_requested, U32 sample_rate, SimulationChannelDescriptor** simulation_channel )
+U32 HdmiCecSimulationDataGenerator::GenerateSimulationData( U64 largest_sample_requested, U32 sample_rate,
+                                                            SimulationChannelDescriptor** simulation_channel )
 {
-    const U64 lastSample = AnalyzerHelpers::AdjustSimulationTargetSample(
-                largest_sample_requested, sample_rate, mSimulationSampleRateHz );
+    const U64 lastSample = AnalyzerHelpers::AdjustSimulationTargetSample( largest_sample_requested, sample_rate, mSimulationSampleRateHz );
 
     while( mCecSimulationData.GetCurrentSampleNumber() < lastSample )
     {
@@ -168,14 +168,14 @@ void HdmiCecSimulationDataGenerator::GenStartSeq()
 
 void HdmiCecSimulationDataGenerator::GenHeaderBlock( U8 src, U8 dst, bool eom, bool ack )
 {
-    const U8 data = ( ( src & 0xF ) << 4) | ( dst & 0xF );
+    const U8 data = ( ( src & 0xF ) << 4 ) | ( dst & 0xF );
     GenDataBlock( data, eom, ack );
 }
 
 void HdmiCecSimulationDataGenerator::GenDataBlock( U8 data, bool eom, bool ack )
 {
-    for( int i=7; i>=0; i-- )
-        GenBit( (data >> i) & 0x1 );
+    for( int i = 7; i >= 0; i-- )
+        GenBit( ( data >> i ) & 0x1 );
 
     if( mErrorType != ERR_NOEOM )
         GenBit( eom );
@@ -191,7 +191,8 @@ void HdmiCecSimulationDataGenerator::GenDataBlock( U8 data, bool eom, bool ack )
 void HdmiCecSimulationDataGenerator::GenBit( bool value, bool ackBit )
 {
     // Timing values are inverted for the follower-asserted ACK bit
-    if( ackBit ) value = !value;
+    if( ackBit )
+        value = !value;
     // Timing values from CEC 1.3a section 5.2.2 "Data Bit Timing"
     const float risingTime = value ? HdmiCec::Tim_Bit_One : HdmiCec::Tim_Bit_Zero;
 
@@ -215,7 +216,7 @@ void HdmiCecSimulationDataGenerator::AdvanceRand( float minMsecs, float maxMsecs
     // Get a random number from 0 to 1
     float r = frand();
     // Use r in a weighted sum to obtain a random number from minMsecs to maxMsecs
-    Advance( (1.0f-r) * minMsecs + r * maxMsecs );
+    Advance( ( 1.0f - r ) * minMsecs + r * maxMsecs );
 }
 
 float HdmiCecSimulationDataGenerator::frand()

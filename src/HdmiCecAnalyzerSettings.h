@@ -7,7 +7,7 @@
 
 class HdmiCecAnalyzerSettings : public AnalyzerSettings
 {
-public:
+  public:
     HdmiCecAnalyzerSettings();
     virtual ~HdmiCecAnalyzerSettings();
 
@@ -18,8 +18,8 @@ public:
 
     Channel mCecChannel;
 
-protected:
-    std::auto_ptr< AnalyzerSettingInterfaceChannel >	mCecChannelInterface;
+  protected:
+    std::auto_ptr<AnalyzerSettingInterfaceChannel> mCecChannelInterface;
 };
 
-#endif //HDMICEC_ANALYZER_SETTINGS
+#endif // HDMICEC_ANALYZER_SETTINGS
