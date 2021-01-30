@@ -187,6 +187,32 @@ namespace HdmiCec
             return "SystemAudioModeStatus";
         case OpCode_SetAudioRate:
             return "SetAudioRate";
+        case OpCode_ReportShortAudioDescriptor:
+            return "ReportShortAudioDescriptor";
+        case OpCode_RequestShortAudioDescriptor:
+            return "RequestShortAudioDescriptor";
+        case OpCode_GiveFeatures:
+            return "GiveFeatures";
+        case OpCode_ReportFeatures:
+            return "ReportFeatures";
+        case OpCode_RequestCurrentLatency:
+            return "RequestCurrentLatency";
+        case OpCode_ReportCurrentLatency:
+            return "ReportCurrentLatency";
+        case OpCode_InitiateArc:
+            return "InitiateArc";
+        case OpCode_ReportArcInitiated:
+            return "ReportArcInitiated";
+        case OpCode_ReportArcTerminated:
+            return "ReportArcTerminated";
+        case OpCode_RequestArcInitiation:
+            return "RequestArcInitiation";
+        case OpCode_RequestArcTermination:
+            return "RequestArcTermination";
+        case OpCode_TerminateArc:
+            return "TerminateArc";
+        case OpCode_CDCMessage:
+            return "CDCMessage";
         default:
             break;
         }

@@ -172,7 +172,20 @@ namespace HdmiCec
         OpCode_SetSystemAudioMode = 0x72,
         OpCode_SystemAudioModeRequest = 0x70,
         OpCode_SystemAudioModeStatus = 0x7e,
-        OpCode_SetAudioRate = 0x9a
+        OpCode_SetAudioRate = 0x9a,
+        OpCode_ReportShortAudioDescriptor = 0xa3,
+        OpCode_RequestShortAudioDescriptor = 0xa4,
+        OpCode_GiveFeatures = 0xa5,
+        OpCode_ReportFeatures = 0xa6,
+        OpCode_RequestCurrentLatency = 0xa7,
+        OpCode_ReportCurrentLatency = 0xa8,
+        OpCode_InitiateArc = 0xc0,
+        OpCode_ReportArcInitiated = 0xc1,
+        OpCode_ReportArcTerminated = 0xc2,
+        OpCode_RequestArcInitiation = 0xc3,
+        OpCode_RequestArcTermination = 0xc4,
+        OpCode_TerminateArc = 0xc5,
+        OpCode_CDCMessage = 0xf8
     };
 
     const char* GetOpCodeString( OpCode opCode );
