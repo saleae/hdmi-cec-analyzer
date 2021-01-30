@@ -61,6 +61,7 @@ void HdmiCecAnalyzerResults::GenerateFrameTabularText( U64 frame_index, DisplayB
         std::string dataStr = GetNumberString( frame.mData1, 8 );
 
         std::string str = "Data " + dataStr;
+        AddTabularText( str.c_str() );
     }
 
     break;
@@ -156,7 +157,7 @@ void HdmiCecAnalyzerResults::GenerateExportFile( const char* file, DisplayBase d
             }
             else if( frameType == HdmiCec::FrameType_Operand )
             {
-                dataDesc = naString;
+                dataDesc = "Data " + GetNumberString( frame.mData1, 8 );
             }
             else
             {
